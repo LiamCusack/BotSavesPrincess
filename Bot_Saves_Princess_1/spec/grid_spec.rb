@@ -10,7 +10,7 @@ describe Grid do
       expect(grid).to be_a Grid
       expect(grid.size).to eq(3)
       expect(grid.grid).to eq(["p--", "-m-", "---"])
-      expect(grid.find_princess).to eq([0, 0])
+      expect(grid.locate_princess).to eq([0, 0])
     end
   end
 end
