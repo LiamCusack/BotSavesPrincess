@@ -8,6 +8,8 @@ describe Grid do
       grid = Grid.new(3, ["p--", "-m-", "---"])
 
       expect(grid).to be_a Grid
+      expect(grid.size).to eq(3)
+      expect(grid.grid).to eq(["p--", "-m-", "---"])
     end
   end
 end
