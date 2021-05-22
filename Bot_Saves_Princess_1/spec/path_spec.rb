@@ -37,4 +37,14 @@ describe Path do
       expect(@path.path_to_princess).to eq("LEFT\nUP\n")
     end
   end
+
+  describe 'movement' do
+    it 'correctly updates bot coordinates to bring bot closer to princess' do
+      expect(@bot.updated_coords).to eq([1, 1])
+
+      @path.movement
+
+      expect(@bot.updated_coords).to eq([0, 1])
+    end
+  end
 end
