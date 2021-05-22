@@ -2,6 +2,14 @@ class Grid
   attr_reader :size, :grid
 
   def initialize(size, grid)
+    unless size >= 3
+      raise ArgumentError, "Please enter an odd number greater than 2."
+    end
+
+    unless size.odd? == true
+      raise ArgumentError, "Please enter an odd number."
+    end
+
     @size = size
     @grid = grid
   end
