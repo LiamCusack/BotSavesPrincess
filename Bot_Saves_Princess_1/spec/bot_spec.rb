@@ -11,6 +11,7 @@ describe Bot do
       expect(bot).to be_a Bot
       expect(bot.x).to eq(1)
       expect(bot.y).to eq(1)
+      expect(bot.coords).to eq([1, 1])
     end
   end
 end

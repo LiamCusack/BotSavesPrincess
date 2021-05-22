@@ -10,4 +10,7 @@ class Path
     @grid = grid
     @princess = princess
   end
+
+  def path_to_princess
+  end
 end
