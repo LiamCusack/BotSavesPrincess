@@ -61,6 +61,10 @@ class Path
     until @bot.updated_coords == @princess.coords
       self.movement
     end
+    self.output
+  end
+
+  def output
     @output_moves.each do |move|
       puts move
     end
