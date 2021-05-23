@@ -9,7 +9,7 @@ describe Path do
     @grid = Grid.new(3, ["p--", "-m-", "---"])
     @bot = Bot.new(@grid)
     @princess = Princess.new(@grid)
-    @path = Path.new(@bot, @grid, @princess)
+    @path = Path.new(@bot, @princess)
   end
 
   describe 'initialize' do
@@ -21,10 +21,6 @@ describe Path do
       expect(@path.bot).to eq(@bot)
       expect(@path.bot.x).to eq(1)
       expect(@path.bot.y).to eq(1)
-
-      expect(@path.grid).to eq(@grid)
-      expect(@path.grid.size).to eq(3)
-      expect(@path.grid.grid).to eq(["p--", "-m-", "---"])
 
       expect(@path.princess).to eq(@princess)
       expect(@path.princess.x).to eq(0)

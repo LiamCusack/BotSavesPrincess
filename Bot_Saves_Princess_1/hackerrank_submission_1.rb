@@ -41,11 +41,10 @@ class Princess
 end
 
 class Path
-  attr_reader :bot, :grid, :princess
+  attr_reader :bot, :princess
 
-  def initialize(bot, grid, princess)
+  def initialize(bot, princess)
     @bot = bot
-    @grid = grid
     @princess = princess
     @output_moves = []
   end
