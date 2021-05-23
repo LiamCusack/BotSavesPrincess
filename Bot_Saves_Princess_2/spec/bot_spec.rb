@@ -1,17 +1,15 @@
 require 'rspec'
 require './lib/bot'
-require './lib/grid'
 
 describe Bot do
   describe 'initialize' do
     it 'is an instance of bot' do
-      grid = Grid.new(3, ["p--", "-m-", "---"])
-      bot = Bot.new(grid)
+      bot = Bot.new(4, 3)
 
       expect(bot).to be_a Bot
-      expect(bot.x).to eq(1)
-      expect(bot.y).to eq(1)
-      expect(bot.updated_coords).to eq([1, 1])
+      expect(bot.x).to eq(4)
+      expect(bot.y).to eq(3)
+      expect(bot.coords).to eq([4, 3])
     end
   end
 end
