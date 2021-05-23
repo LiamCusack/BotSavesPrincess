@@ -2,6 +2,8 @@ class Grid
   attr_reader :size, :grid
 
   def initialize(size, grid)
+    raise ArgumentError, "Please enter an integer less than 100" unless size < 100
+
     @size = size
     @grid = grid
   end

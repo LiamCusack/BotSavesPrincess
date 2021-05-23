@@ -13,4 +13,10 @@ describe Grid do
       expect(grid.locate_princess).to eq([2, 0])
     end
   end
+
+  describe 'sadpath' do
+    it 'returns an error if you try to add a number above 100' do
+      expect {Grid.new(500, ["-----", "-----", "p-m--", "-----", "-----"])}.to raise_error(ArgumentError)
+    end
+  end
 end
