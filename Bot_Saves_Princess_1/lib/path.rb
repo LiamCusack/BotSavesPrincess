@@ -13,9 +13,7 @@ class Path
   end
 
   def path_to_princess
-    until @bot.updated_coords == @princess.coords
-      self.movement
-    end
+    self.movement until @bot.updated_coords == @princess.coords
     self.output
   end
 

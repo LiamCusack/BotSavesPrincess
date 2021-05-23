@@ -15,13 +15,8 @@ class Grid
   attr_reader :size, :grid
 
   def initialize(size, grid)
-    unless size >= 3
-      raise ArgumentError, "Please enter an odd number greater than 2."
-    end
-
-    unless size.odd? == true
-      raise ArgumentError, "Please enter an odd number."
-    end
+    raise ArgumentError, "Please enter an odd number greater than 2." unless size >= 3
+    raise ArgumentError, "Please enter an odd number." unless size.odd? == true
 
     @size = size
     @grid = grid
@@ -30,9 +25,7 @@ class Grid
   def locate_princess
     corners = [[0, 0], [0, (@size - 1)], [(@size - 1), 0], [(@size - 1), (@size - 1)]]
     corners.each do |corner|
-      if @grid[corner[0]][corner[1]] == "p"
-        return corner
-      end
+    return corner if @grid[corner[0]][corner[1]] == "p"
     end
   end
 end
@@ -58,9 +51,7 @@ class Path
   end
 
   def path_to_princess
-    until @bot.updated_coords == @princess.coords
-      self.movement
-    end
+    self.movement until @bot.updated_coords == @princess.coords
     self.output
   end
 
