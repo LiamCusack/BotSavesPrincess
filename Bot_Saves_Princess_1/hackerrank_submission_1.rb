@@ -81,7 +81,7 @@ def displayPathtoPrincess(n,grid)
   my_grid = Grid.new(n, grid)
   bot = Bot.new(my_grid)
   princess = Princess.new(my_grid)
-  path = Path.new(bot, my_grid, princess)
+  path = Path.new(bot, princess)
 
   path.path_to_princess
 end
