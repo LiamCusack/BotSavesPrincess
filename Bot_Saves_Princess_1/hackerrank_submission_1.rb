@@ -61,7 +61,9 @@ class Path
     until @bot.updated_coords == @princess.coords
       self.movement
     end
-    @output_moves
+    @output_moves.each do |move|
+      puts move
+    end
   end
 
   def movement
@@ -87,9 +89,7 @@ def displayPathtoPrincess(n,grid)
   princess = Princess.new(my_grid)
   path = Path.new(bot, my_grid, princess)
 
-  path.path_to_princess.each do |moves|
-    puts moves
-  end
+  path.path_to_princess
 end
 
 m = gets.to_i
