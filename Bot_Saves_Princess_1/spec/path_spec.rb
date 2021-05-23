@@ -47,4 +47,14 @@ describe Path do
       expect(@bot.updated_coords).to eq([0, 1])
     end
   end
+
+  describe 'output' do
+    it 'prints the current output_moves' do
+      expect(@path.output).to eq([])
+
+      @path.path_to_princess
+
+      expect(@path.output).to eq(["LEFT", "UP"])
+    end
+  end
 end
