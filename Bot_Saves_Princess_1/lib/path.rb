@@ -9,7 +9,7 @@ class Path
     @bot = bot
     @grid = grid
     @princess = princess
-    @output_moves = ""
+    @output_moves = []
   end
 
   def path_to_princess
@@ -22,16 +22,16 @@ class Path
   def movement
     if @bot.x > @princess.x
       @bot.x -= 1
-      @output_moves.concat("LEFT\n")
+      @output_moves << "LEFT"
     elsif @bot.x < @princess.x
       @bot.x += 1
-      @output_moves.concat("RIGHT\n")
+      @output_moves << "RIGHT"
     elsif @bot.y < @princess.y
       @bot.y += 1
-      @output_moves.concat("DOWN\n")
+      @output_moves << "DOWN"
     elsif @bot.y > @princess.y
       @bot.y -= 1
-      @output_moves.concat("UP\n")
+      @output_moves << "UP"
     end
   end
 end
