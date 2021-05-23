@@ -14,8 +14,6 @@ describe Path do
 
   describe 'initialize' do
     it 'is an instance of path' do
-
-
       expect(@path).to be_a Path
 
       expect(@path.bot).to eq(@bot)
