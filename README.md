@@ -1,3 +1,70 @@
+# BotSavesPrincess
+<details open="open">
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+    </li>
+    <li>
+      <a href="#setup">Setup</a>
+    </li>
+    <li><a href="#bot-saves-princess">Bot Saves Princess</a></li>
+    <li><a href="#bot-saves-princess-2">Bot Saves Princess 2</a></li>
+  </ol>
+</details>
+
+
+## About The Project
+
+This is my submission for the [Bot saves princess](https://www.hackerrank.com/challenges/saveprincess) and [Bot saves princess - 2](https://www.hackerrank.com/challenges/saveprincess2) challenges on [HackerRank.com](https://www.hackerrank.com)
+
+### Built With
+
+* [Ruby on Rails](https://rubyonrails.org/)
+* [RSpec](https://github.com/rspec/rspec-rails)
+
+
+## Setup
+
+To run this code on your own computer follow these steps:
+1. Fork the project
+2. Clone it in your terminal:
+`git clone git@github.com:LiamCusack/BotSavesPrincess.git`
+3. Navigate to the desired challenge using *one* of the following commands
+  * 1:
+`cd Bot_Saves_Princess_1`
+  * 2:
+`cd Bot_Saves_Princess_2`
+4. Run the test suite:
+`rspec`
+
+If you would like to run the code on [HackerRank.com](https://www.hackerrank.com), copy and paste the content of the corresponding Hackerrank_Submission.rb file into the submission form found at the bottom of the page
+  * [Bot saves princess](https://www.hackerrank.com/challenges/saveprincess)
+  * [Bot saves princess - 2](https://www.hackerrank.com/challenges/saveprincess2)
+  
+  
+## Bot Saves Princess
+
+### Approach 
+
+My goal was to successfully complete this challenge while adequately demonstrating my skills in Test Driven Development, Object Oriented Programming and Github version control. In order to reach this goal, I directed my focus into these four objectives:
+1. Organize my work through branching
+2. Write tests before implementing any functional code
+3. Commit Frequently
+4. Abstract my code into sensible classes
+
+### Writing the Code
+
+I chose to break the data given to us into 4 separate class; A class for the bot, a class for the princess, a class for the grid, and a class for the Path used to find the princess. While the bot and the princess were both hardcoded into the grids that hackerrank supplied, and could easily have just been incorporated into the grid class, I chose to store them as objects belonging to their own class for ease of use later on.
+
+#### Bot
+
+Originally when I created the bot class, I created it with only the two coordinates used to identify its starting location. Seeing as the bot's starting location in challenge one was always the center, I was able to hard code the coordinates, since the exact center of the grid would always be the grid's size minus one then divided by 2. Later on I added in a methods "coords" so that I could check on what the coordinates were at any given time. Originally I stored this as an instance variable, but I realized doing so made the coordinates static which would result in an infinite loop when comparing them to the princess' coordinates to determine which move the bot needed to make next.
+
+#### Grid
+
+My next focus was on the grid. Since the grid is supplied by the user, I made its primary functionality storing the arguements provided by HackerRank as well as identifying the location of the princess. Since I knew that the princess would always spawn in one of the four corners, I simply needed to check each corner's index within the grid until I found which one she resided in. Once I did this, I returned the coordinates of the princess corner so that they could be retrieved by calling the locate_princess method. 
+
 The grid class was also where I stored my error responses in the event a user tried to pass parameters outside of those allowed by the code challenge. I did this by raising ArgumentErrors which would inform the user in how to submit valid parameters.
 
 #### Princess
