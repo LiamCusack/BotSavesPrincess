@@ -34,7 +34,7 @@ describe Path do
 
   describe 'path to princess' do
     it 'outputs the correct moves to get to the princess' do
-      expect(@path.path_to_princess).to eq("LEFT\nUP\n")
+      expect(@path.path_to_princess).to eq(["LEFT", "UP"])
     end
   end
 
