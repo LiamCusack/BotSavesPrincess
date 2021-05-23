@@ -38,7 +38,7 @@ To run this code on your own computer follow these steps:
 4. Run the test suite:
 `rspec`
 
-If you would like to run the code on [HackerRank.com](https://www.hackerrank.com), copy and paste the content of the corresponding Hackerrank_Submission.rb file into the submission form found at the bottom of the page
+If you would like to run the code on [HackerRank.com](https://www.hackerrank.com), copy and paste the content of the corresponding `Hackerrank_Submission.rb` file into the submission form found at the bottom of the page
   * [Bot saves princess](https://www.hackerrank.com/challenges/saveprincess)
   * [Bot saves princess - 2](https://www.hackerrank.com/challenges/saveprincess2)
   
