@@ -1,12 +1,12 @@
 class Bot
   attr_accessor :x, :y
-  
-  def initialize(grid)
-    @x = (grid.size - 1) / 2
-    @y = (grid.size - 1) / 2
+
+  def initialize(r, c)
+    @x = r
+    @y = c
   end
 
-  def updated_coords
+  def coords
     [@x, @y]
   end
 end
