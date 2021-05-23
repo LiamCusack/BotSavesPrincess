@@ -10,7 +10,7 @@ class Path
     @output_moves = []
   end
 
-  def path_first_step
+  def path_next_step
     self.movement if @bot.coords != @princess.coords
     self.output
   end

@@ -26,9 +26,9 @@ describe Path do
     end
   end
 
-  describe 'path first step' do
+  describe 'path next step' do
     it 'prints the next move that the bot will take to reach the princess' do
-      expect(@path.path_first_step).to eq(["LEFT"])
+      expect(@path.path_next_step).to eq(["LEFT"])
     end
   end
 
@@ -46,7 +46,7 @@ describe Path do
     it 'prints the current output_moves' do
       expect(@path.output).to eq([])
 
-      @path.path_first_step
+      @path.path_next_step
 
       expect(@path.output).to eq(["LEFT"])
     end

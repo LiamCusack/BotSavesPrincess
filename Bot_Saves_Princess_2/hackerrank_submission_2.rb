@@ -52,7 +52,7 @@ class Path
     @output_moves = []
   end
 
-  def path_first_step
+  def path_next_step
     self.movement if @bot.coords != @princess.coords
     self.output
   end
@@ -86,7 +86,7 @@ def nextMove(n,r,c,grid)
   princess = Princess.new(my_grid)
   path = Path.new(bot, princess)
 
-  path.path_first_step
+  path.path_next_step
 end
 
 n = gets.to_i
