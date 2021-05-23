@@ -11,7 +11,7 @@ describe Princess do
       expect(princess).to be_a Princess
       expect(princess.x).to eq(0)
       expect(princess.y).to eq(2)
-      expect(princess.coords).to eq([0, 2])
+      expect(princess.coords).to eq([2, 0])
     end
   end
 end
