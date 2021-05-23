@@ -12,8 +12,8 @@ class Path
     @output_moves = []
   end
 
-  def path_to_princess
-    self.movement until @bot.updated_coords == @princess.coords
+  def path_first_step
+    self.movement if @bot.coords != @princess.coords
     self.output
   end
 
@@ -26,16 +26,16 @@ class Path
   def movement
     if @bot.x > @princess.x
       @bot.x -= 1
-      @output_moves << "LEFT"
+      @output_moves << "UP"
     elsif @bot.x < @princess.x
       @bot.x += 1
-      @output_moves << "RIGHT"
+      @output_moves << "DOWN"
     elsif @bot.y < @princess.y
       @bot.y += 1
-      @output_moves << "DOWN"
+      @output_moves << "RIGHT"
     elsif @bot.y > @princess.y
       @bot.y -= 1
-      @output_moves << "UP"
+      @output_moves << "LEFT"
     end
   end
 end
