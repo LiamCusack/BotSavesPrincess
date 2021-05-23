@@ -2,17 +2,20 @@ class Grid
   attr_reader :size, :grid
 
   def initialize(size, grid)
-    raise ArgumentError, "Please enter an odd number greater than 2." unless size >= 3
-    raise ArgumentError, "Please enter an odd number." unless size.odd? == true
+    raise ArgumentError, "Please enter an integer less than 100" unless size < 100
 
     @size = size
     @grid = grid
   end
 
   def locate_princess
-    corners = [[0, 0], [0, (@size - 1)], [(@size - 1), 0], [(@size - 1), (@size - 1)]]
-    corners.each do |corner|
-    return corner  if @grid[corner[0]][corner[1]] == "p"
+    coords = []
+    @grid.any? do |s|
+      if s.include?("p")
+        coords << @grid.find_index(s)
+        coords << s.index('p')
+      end
     end
+    coords
   end
 end

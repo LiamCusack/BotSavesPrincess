@@ -14,8 +14,6 @@ describe Path do
 
   describe 'initialize' do
     it 'is an instance of path' do
-
-
       expect(@path).to be_a Path
 
       expect(@path.bot).to eq(@bot)
@@ -29,6 +27,32 @@ describe Path do
       expect(@path.princess).to eq(@princess)
       expect(@path.princess.x).to eq(2)
       expect(@path.princess.y).to eq(0)
+    end
+  end
+
+  describe 'path first step' do
+    it 'prints the next move that the bot will take to reach the princess' do
+      expect(@path.path_first_step).to eq(["LEFT"])
+    end
+  end
+
+  describe 'movement' do
+    it 'correctly updates bot coordinates to bring bot closer to princess' do
+      expect(@bot.coords).to eq([2, 2])
+
+      @path.movement
+
+      expect(@bot.coords).to eq([2, 1])
+    end
+  end
+
+  describe 'output' do
+    it 'prints the current output_moves' do
+      expect(@path.output).to eq([])
+
+      @path.path_first_step
+
+      expect(@path.output).to eq(["LEFT"])
     end
   end
 end
